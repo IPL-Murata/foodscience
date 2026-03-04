@@ -10,11 +10,14 @@
       </div>
       <section class="footer_sns">
         <h3>SHARE ON</h3>
-        <ul>
-          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-        </ul>
+        <?php
+        $snslinks =[
+          'menu' => 'footer-sns', //管理画面で設定したメニュー名
+          'menu_class' => '', //ulタグにつけるclass名
+          'container' => false, //ulの親にできるdivを「無し」にする
+        ];
+        wp_nav_menu($snslinks);
+        ?>
       </section>
       <div class="footer_copyright">
         <small>&copy; FOOD SCIENCE All rights reserved.</small>

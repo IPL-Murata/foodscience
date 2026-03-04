@@ -24,13 +24,14 @@
     <div class="header_nav">
       <div class="header_menu js-menu-icon"><span></span></div>
       <div class="gnav js-menu">
-        <ul>
-          <li><a href="concept.html">コンセプト</a></li>
-          <li><a href="food.html">メニュー</a></li>
-          <li><a href="access.html">アクセス</a></li>
-          <li><a href="category.html">最新情報</a></li>
-        </ul>
-
+        <?php
+        $navigation =[
+          'menu' => 'global-navigation', //管理画面で設定したメニュー名
+          'menu_class' => '', //ulタグにつけるclass名
+          'container' => false, //ulの親にできるdivを「無し」にする
+        ];
+        wp_nav_menu($navigation);
+        ?>
         <div class="header_info">
           <form class="header_search">
             <input type="text" aria-label="Search">
@@ -49,7 +50,7 @@
               </dl>
             </div>
             <p>
-              <a href="#"><i class="fa-solid fa-envelope"></i><span>ご予約・お問い合わせ</span></a>
+              <a href="<?php echo home_url('/contact'); ?>"><i class="fa-solid fa-envelope"></i><span>ご予約・お問い合わせ</span></a>
             </p>
           </div>
         </div>
