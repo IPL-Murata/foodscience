@@ -42,6 +42,7 @@
                 <?php get_template_part('template-parts/loop-news'); ?>
               <?php endwhile; ?>
             <?php endif; ?>
+            <?php get_template_part('template-parts/pagenav'); ?>
             </div>
         </div>
 

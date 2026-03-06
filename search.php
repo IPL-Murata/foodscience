@@ -17,6 +17,7 @@
           <?php get_template_part('template-parts/loop-news'); ?>
         <?php endwhile; ?>
         </div>
+        <?php get_template_part('template-parts/pagenav'); ?>
         <?php else: ?>
           <div class="section_desc">
             <p><i class="fas fa-search"></i> 検索ワード「<?php the_search_query(); ?>」</p>

@@ -116,7 +116,7 @@
         <div class="section_body">
           <p>〒162-0846 東京都新宿区市谷左内町21-13</p>
           <div class="section_btn">
-            <a href="<?php echo get_permalink(43); ?>" class="btn btn-primary">アクセスはこちら</a>
+            <a href="<?php echo get_permalink(41); ?>" class="btn btn-primary">アクセスはこちら</a>
           </div>
         </div>
       </div>
