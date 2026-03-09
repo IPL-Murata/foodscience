@@ -56,6 +56,33 @@
           </article>
         <?php endwhile; ?>
       <?php endif; ?>
+      <?php
+      $args = [
+        // この配列の中に「クエリのオプション」を設定していく
+        'post_type' => 'post', // 投稿の記事を表示
+        'post_per_page' => 3, // 最大表示を3件まで
+        'category_name' => 'column',
+      ];
+      // 「クエリ」自体の準備とか設定的なこと
+      // このケースで言うと$latest_queryというループを作ったと言う感じ
+      $latest_query = new WP_Query($args); 
+      ?>
+
+      <?php if($latest_query -> have_posts()): ?>
+        <section class="latest">
+          <header class="latest_header">
+            <h2 class="heading heading-secondary">新着情報</h2>
+          </header>
+          <div class="latest_body">
+              <div class="cardList">
+              <?php while($latest_query -> have_posts()): $latest_query -> the_post(); ?>
+                <?php get_template_part('template-parts/loop-news'); ?>
+                <?php endwhile; wp_reset_postdata(); ?>
+              </div>
+          </div>
+        </section>
+      <?php endif; ?>
+      
     </div>
   </div>
 </main>
